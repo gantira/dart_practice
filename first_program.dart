@@ -8,9 +8,9 @@ void main(List<String> args) {
     'url': '//path/to/saturn.jpg'
   };
 
-  print('nama $name');
+  print('Nama: ${name}');
   print(year);
   print(antennaDiameter);
-  print(flybyObjects);
+  print('Planet pertama: ${flybyObjects[0]}');
   print(image);
 }
