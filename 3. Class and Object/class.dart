@@ -32,6 +32,7 @@ void main(List<String> args) {
   print(rekeningRifqi.namaBank);
   print(rekeningRifqi.saldo);
   rekeningRifqi.cekSaldo();
+  print('-------------');
 
   RekeningBank rekeningEka = new RekeningBank(
     namaPemilik: 'Eka Husein',
@@ -39,6 +40,22 @@ void main(List<String> args) {
     saldo: 5000000,
   );
   rekeningEka.cekSaldo();
+  print('-------------');
+
+  RekeningBank rekeningDian = new RekeningBank(
+    namaPemilik: 'Dian Eka',
+    namaBank: 'TAB',
+    saldo: 2000000,
+  );
+  print(rekeningDian.getPemelik);
+  print(rekeningDian.getBank);
+  print(rekeningDian.saldo);
+  rekeningDian.setNamaPemilik = 'Rifqi Dian';
+  rekeningDian.setNamaBank = 'Bank Rakyat';
+  rekeningDian.setSaldo = 5000000;
+  print(rekeningDian.getPemelik);
+  print(rekeningDian.getBank);
+  print(rekeningDian.getSaldo);
 }
 
 class RekeningBank {
@@ -48,6 +65,30 @@ class RekeningBank {
 
   RekeningBank(
       {required this.namaPemilik, required this.namaBank, required this.saldo});
+
+  set setNamaPemilik(String nama) {
+    this.namaPemilik = nama;
+  }
+
+  set setNamaBank(String nama) {
+    this.namaBank = nama;
+  }
+
+  set setSaldo(int saldoBaru) {
+    this.saldo = saldoBaru;
+  }
+
+  String get getPemelik {
+    return namaPemilik;
+  }
+
+  String get getBank {
+    return namaBank;
+  }
+
+  int get getSaldo {
+    return saldo;
+  }
 
   cekSaldo() {
     print('Saldo saat ini: $saldo');
