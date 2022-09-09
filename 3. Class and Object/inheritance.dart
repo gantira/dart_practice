@@ -1,16 +1,18 @@
 void main(List<String> args) {
-  print('Mobiol');
+  print('Mobil');
   Mobil avanta = new Mobil(roda: 4);
   print(avanta.suaraKlakson);
   avanta.jumlahRoda(avanta.roda);
+  avanta.berjalan();
 
   print('Motor');
   Motor honta = new Motor(roda: 2);
   print(honta.suaraKlakson);
   honta.jumlahRoda(honta.roda);
+  honta.berjalan();
 }
 
-class Kendaraan {
+abstract class Kendaraan {
   String suaraKlakson = 'tiiiinnnnn';
 
   void klakson() {
@@ -20,6 +22,8 @@ class Kendaraan {
   void jumlahRoda(int roda) {
     print(roda);
   }
+
+  void berjalan();
 }
 
 class Mobil extends Kendaraan {
@@ -31,6 +35,11 @@ class Mobil extends Kendaraan {
     print('Roda mobil: $roda');
     super.jumlahRoda(roda);
   }
+
+  @override
+  void berjalan() {
+    print('mobil berjalan');
+  }
 }
 
 class Motor extends Kendaraan {
@@ -41,5 +50,10 @@ class Motor extends Kendaraan {
   void jumlahRoda(int roda) {
     print('Roda motor: $roda');
     super.jumlahRoda(roda);
+  }
+
+  @override
+  void berjalan() {
+    print('motor berjalan');
   }
 }
