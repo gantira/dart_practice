@@ -6,13 +6,17 @@ Future<void> main(List<String> args) async {
 }
 
 Future<String> printData() async {
-  var data = await fetchData();
-  return 'data: $data';
+  try {
+    var data = await fetchData();
+    return 'data: $data';
+  } catch (e) {
+    return e.toString();
+  }
 }
 
 Future<String> fetchData() {
   return Future.delayed(
     Duration(seconds: 2),
-    () => 'fetch data',
+    () => throw ('data gagal diproses'),
   );
 }
