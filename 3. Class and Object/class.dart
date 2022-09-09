@@ -34,6 +34,12 @@ void main(List<String> args) {
   rekeningRifqi.cekSaldo();
   print('-------------');
 
+  RekeningBank rekeningOwo = new RekeningBank.Owo(
+    namaPemilik: 'Owo Hardianto',
+    saldo: 200000,
+  );
+  print(rekeningOwo.getBank);
+
   RekeningBank rekeningEka = new RekeningBank(
     namaPemilik: 'Eka Husein',
     namaBank: 'ATB',
@@ -65,6 +71,8 @@ class RekeningBank {
 
   RekeningBank(
       {required this.namaPemilik, required this.namaBank, required this.saldo});
+  RekeningBank.Owo(
+      {required this.namaPemilik, this.namaBank = 'OWO', required this.saldo});
 
   set setNamaPemilik(String nama) {
     this.namaPemilik = nama;
